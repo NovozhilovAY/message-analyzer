@@ -30,6 +30,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <dependency>
             <!--        Эта зависимость тянет компоненты спринга их тоже нужно сканировать-->
             <groupId>liga.medical</groupId>
             <artifactId>common-services</artifactId>

@@ -1,7 +1,7 @@
 package liga.medical.messageanalyzer.core.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import liga.medical.dto.MessageDto;
+import liga.medical.dto.dto.RabbitMessageDto;
 import liga.medical.messageanalyzer.core.api.MessageSenderService;
 import liga.medical.messageanalyzer.core.config.RabbitConfig;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ public class MessageController {
     }
 
     @PostMapping
-    ResponseEntity<String> sendMessage(@RequestBody MessageDto message) throws JsonProcessingException {
+    ResponseEntity<String> sendMessage(@RequestBody RabbitMessageDto message) throws JsonProcessingException {
         messageSenderService.sendMessage(message, RabbitConfig.QUEUE_NAME);
         return ResponseEntity.ok("Сообщение - " + message.toString() + " доставлено");
     }
